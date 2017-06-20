@@ -1,0 +1,23 @@
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+if = '''! has('nvim')'''
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+if = '''has('nvim')'''
+on_event = 'InsertCharPre'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = ['unite.vim']
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+on_i = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']

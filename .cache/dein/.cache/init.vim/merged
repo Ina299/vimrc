@@ -1,0 +1,2 @@
+100
+['Shougo/dein.vim', 'Shougo/deoplete.nvim', 'Shougo/neomru.vim', 'Shougo/neosnippet', 'Shougo/neosnippet-snippets', 'Shougo/unite.vim', 'Shougo/vimproc.vim', 'scrooloose/nerdtree', 'vim-airline/vim-airline', 'vim-airline/vim-airline-themes', 'w0rp/ale']

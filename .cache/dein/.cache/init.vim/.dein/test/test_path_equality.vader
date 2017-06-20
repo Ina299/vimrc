@@ -1,0 +1,26 @@
+Execute(ale#path#IsBufferPath should match simple relative paths):
+  silent file! foo.txt
+
+  Assert ale#path#IsBufferPath(bufnr(''), 'foo.txt'), 'No match for foo.txt'
+  Assert !ale#path#IsBufferPath(bufnr(''), 'bar.txt'), 'Bad match for bar.txt'
+
+Execute(ale#path#IsBufferPath should match absolute paths):
+  silent file! foo.txt
+
+  Assert ale#path#IsBufferPath(bufnr(''), getcwd() . '/foo.txt'), 'No match for foo.txt'
+  Assert !ale#path#IsBufferPath(bufnr(''), getcwd() . '/bar.txt'), 'Bad match for bar.txt'
+
+Execute(ale#path#IsBufferPath should match paths beginning with ./):
+  silent file! foo.txt
+
+  Assert ale#path#IsBufferPath(bufnr(''), './foo.txt'), 'No match for ./foo.txt'
+
+Execute(ale#path#IsBufferPath should match if our path ends with the test path):
+  silent file! foo/bar/baz.txt
+
+  Assert ale#path#IsBufferPath(bufnr(''), 'bar/baz.txt'), 'No match for bar/baz.txt'
+
+Execute(ale#path#IsBufferPath should match paths with redundant slashes):
+  silent file! foo.txt
+
+  Assert ale#path#IsBufferPath(bufnr(''), getcwd() . '////foo.txt'), 'No match for foo.txt'
