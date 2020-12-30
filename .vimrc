@@ -62,7 +62,7 @@ if !has('nvim')
   let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 endif
 let g:neosnippet#snippets_directory = '~/.vim/snippets/'
-let g:airline_theme='base16_default'
+let g:airline_theme='molokai'
 let g:python3_host_prog = $PYENV_ROOT . '/versions/extractor/bin/python'
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_sign_column_always = 1
@@ -94,7 +94,9 @@ set autoread
 set hidden
 set showcmd
 set number
+set t_Co=256
 set cursorline
+hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
 set smartindent
 set showmatch
 set laststatus=2
