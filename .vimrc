@@ -38,29 +38,6 @@ if has('nvim')
   let g:deoplete#file#enable_buffer_path = 1
   let g:deoplete#max_list = 10000
 endif
-if !has('nvim')
-  let g:neocomplete#enable_at_startup = 1
-  let g:neocomplete#enable_smart_case = 1
-  let g:neocomplete#sources#syntax#min_keyword_length = 3
-  let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-  let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme'   : $HOME.'/.gosh_completions'
-    \ }
-  if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-  endif
-  let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-  inoremap <expr><C-g>  neocomplete#undo_completion()
-  inoremap <expr><C-l>  neocomplete#complete_common_string()
-  inoremap <expr><C-h>  neocomplete#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS>   neocomplete#smart_close_popup()."\<C-h>"
-  if !exists('g:neocomplete#source#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
-  endif
-  let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-endif
 let g:neosnippet#snippets_directory = '~/.vim/snippets/'
 let g:airline_theme='molokai'
 let g:python3_host_prog = $PYENV_ROOT . '/versions/extractor/bin/python'
@@ -96,7 +73,7 @@ set showcmd
 set number
 set t_Co=256
 set cursorline
-hi CursorLine   cterm=NONE ctermbg=234 ctermfg=NONE
+hi CursorLine   cterm=NONE ctermbg=243 ctermfg=NONE
 set smartindent
 set showmatch
 set laststatus=2
